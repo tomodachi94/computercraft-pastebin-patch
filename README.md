@@ -1,5 +1,7 @@
 # ComputerCraft patch for Pastebin
 
+![Available on Modrinth](https://modrinth-utils.vercel.app/api/badge/downloads?logo=true&style=flat&id=65CVhIWm)
+
 This fixes Pastebin on legacy versions of ComputerCraft.
 
 This resource pack has been confirmed to work on Tekkit main.
