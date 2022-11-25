@@ -1,0 +1,2 @@
+assets/computercraft/lua/** linguist-language=Lua
+*.mcmeta linguist-language=JSON
