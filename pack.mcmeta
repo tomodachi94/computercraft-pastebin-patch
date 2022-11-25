@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "pack_format": 1,
+    "description": "Fixes Pastebin on legacy versions of ComputerCraft."
+  }
+}
