@@ -8,9 +8,13 @@ This resource pack has been confirmed to work on Tekkit main.
 
 When executing `pastebin get` or `pastebin put`, the program tries to access `http://pastebin.com`. This fails due to the `http` part.
 
+Additionally, Pastebin has started requiring [a `User-Agent` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/User-Agent) for all requests.
+
 ## The solution
 
-The fix is really simple: Replace `http` with `https`. This restores standard functionality.
+The fix is really simple: Replace `http` with `https`, and include a `User-Agent` header with all requests. This restores standard functionality.
+
+A quick caveat: versions of ComputerCraft before 1.63 [did not support specifying headers with HTTP requests](https://tweaked.cc/module/http.html#v:request). Those versions will remain broken unless the mod itself is patched.
 
 ## Credits and licensing
 

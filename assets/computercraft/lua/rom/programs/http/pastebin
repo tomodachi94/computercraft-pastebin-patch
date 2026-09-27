@@ -1,5 +1,6 @@
 -- Provides functionality to interact with Pastebin.
--- Patched to use the HTTPS endpoint instead of the HTTP endpoint.
+-- Patched to use the HTTPS endpoint instead of the HTTP endpoint,
+-- and to specify a User-Agent.
 local function printUsage()
     print( "Usages:" )
     print( "pastebin put <filename>" )
@@ -18,11 +19,16 @@ if not http then
     printError( "Set http_enable to true in ComputerCraft.cfg" )
     return
 end
+
+local headers = {
+    ["User-Agent"] = _HOST or "ComputerCraft unknown (Minecraft pre-1.12.20"
+}
  
 local function get(paste)
     write( "Connecting to pastebin.com... " )
     local response = http.get(
-        "https://pastebin.com/raw.php?i="..textutils.urlEncode( paste )
+        "https://pastebin.com/raw.php?i="..textutils.urlEncode( paste ),
+		headers
     )
         
     if response then
@@ -62,7 +68,8 @@ if sCommand == "put" then
         "api_dev_key="..key.."&"..
         "api_paste_format=lua&"..
         "api_paste_name="..textutils.urlEncode(sName).."&"..
-        "api_paste_code="..textutils.urlEncode(sText)
+        "api_paste_code="..textutils.urlEncode(sText),
+		headers
     )
         
     if response then
