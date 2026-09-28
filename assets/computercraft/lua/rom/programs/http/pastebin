@@ -21,7 +21,7 @@ if not http then
 end
 
 local headers = {
-    ["User-Agent"] = _HOST or "ComputerCraft unknown (Minecraft pre-1.12.20"
+    ["User-Agent"] = _HOST or "ComputerCraft unknown (Minecraft pre-1.12.2)"
 }
  
 local function get(paste)
